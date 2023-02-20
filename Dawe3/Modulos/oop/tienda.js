@@ -1,4 +1,3 @@
-import Producto from './productos.js';
 import Libro from './libros.js';
 import Disco from './discos.js'	;
 

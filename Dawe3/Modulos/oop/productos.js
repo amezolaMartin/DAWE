@@ -7,10 +7,8 @@ export default class Producto {
 	}
 
 	mostrar(){
-
 		var contenido = "Producto:" + this.titulo + "<br/>" + "Autor:" + this.autor + "<br/>"  + "Precio:" + this.precio + "<hr/>";
 		return contenido;
-
 	}
 
 }
