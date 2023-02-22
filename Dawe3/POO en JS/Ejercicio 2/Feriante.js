@@ -1,12 +1,10 @@
 class Feriante extends Locutor {
     constructor(nombre) {
-        super(nombre);
-        this.verbo = "grita";
+        super(nombre, "grita");
     }
 
-    dice(s) {
-        console.log(this.nombre + " " + this.verbo + " '" + s.toUpperCase() + "'")
-
+    dice(text) {
+        super.dice(text.toUpperCase());
     }
 }
 
