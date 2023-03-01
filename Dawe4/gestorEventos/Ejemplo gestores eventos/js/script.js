@@ -36,6 +36,11 @@ function inicializarGestores()
 		return false;
 	}
 
+	function cambiarImagen()
+	{
+		imagen.style.backgroundImage = "";
+	}
+
 }
 
 window.onload = inicializarGestores;
