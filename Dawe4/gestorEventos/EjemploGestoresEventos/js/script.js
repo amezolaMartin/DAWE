@@ -38,8 +38,10 @@ function inicializarGestores()
 
 	function cambiarImagen()
 	{
-		imagen.style.backgroundImage = "";
+		imagen.style.backgroundImage = "../gestorEventos/EjemploGestoresEventos/imagenesEjercicio/fresas.jpg";
 	}
+
+	var x = setInterval(cambiarImagen, 5000);
 
 }
 
