@@ -5,6 +5,52 @@
 <title>Principato Italian Cuisine</title>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <script src="js/script.js"></script>
+<script>
+	var cont = 1; // Creamos la variable contador
+
+	function cambiarImagen(){
+		var imagen = document.getElementById("imagen"); // Conseguimos el div mediante getElementById
+		var fruta = "";
+		var aux = false; // Creo una variable auxiliar de "chivato"
+		switch(cont){
+			case 1: //5s
+				fruta = "limon"
+				break;
+			case 2: //10s
+				fruta = "fresas"
+				break;
+			case 3: //15s
+				fruta = "mandarinas"
+				break;
+			case 4: //20s
+				fruta = "manzanas"
+				break;
+			case 5: //25s
+				fruta = "melon"
+				break;
+			default: //30s la imagen inicial
+        aux = true;
+				cont = 0;
+				break;
+		}
+		if(aux == false){
+			imagen.style.backgroundImage = "url(imagenesEjercicio/"+fruta+".jpg)";
+			cont++
+		}
+		else{
+			imagen.style.backgroundImage = "url(images/heade_ft.jpg)";
+			aux = false;
+		}
+		
+		imagen.addEventListener('click', pararImagenes,false)
+
+	}
+	function pararImagenes(){
+		clearInterval(reloj)
+	}
+
+	var reloj = setInterval(cambiarImagen, 5000);
+</script>
 </head>
 <body>
 <div class="container">
