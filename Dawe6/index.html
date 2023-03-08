@@ -36,7 +36,9 @@
         let rectY = 0;
 
         // Dibujar el rectángulo en la posición inicial
-        ctx.fillRect(rectX, rectY, rectWidth, rectHeight);
+        //ctx.fillRect(rectX, rectY, rectWidth, rectHeight);
+        ctx.lineWidth = 3;
+        ctx.strokeRect(rectX, rectY, rectWidth, rectHeight);
 
         // Detectar cuando se presiona una tecla para mover el rectángulo
         document.addEventListener("keydown", (event) => {
@@ -69,7 +71,8 @@
 
             // Limpiar el canvas y dibujar el rectángulo en la nueva posición
             ctx.clearRect(0, 0, canvasWidth, canvasHeight);
-            ctx.fillRect(rectX, rectY, rectWidth, rectHeight);
+            ctx.strokeRect(rectX, rectY, rectWidth, rectHeight);
+            //ctx.fillRect(rectX, rectY, rectWidth, rectHeight);
         });
     </script>
 
