@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Canvas</title>
+    <link rel="stylesheet" href="./style.css">
+
+    
+
+
+    <div id="canvas-container">
+        <canvas id="lienzo" width="900" height="600" style="border: 1px solid black;">
+
+
+        </canvas>
+    </div>
+
+</head>
+
+<body>
+
+    <script>
+
+        const canvas = document.getElementById("lienzo");
+        const ctx = canvas.getContext("2d");
+
+        // Obtener las dimensiones del canvas
+        const canvasWidth = canvas.width;
+        const canvasHeight = canvas.height;
+
+        // Definir las dimensiones y posición del rectángulo
+        const rectWidth = 50;
+        const rectHeight = 50;
+        let rectX = 0;
+        let rectY = 0;
+
+        // Dibujar el rectángulo en la posición inicial
+        ctx.fillRect(rectX, rectY, rectWidth, rectHeight);
+
+        // Detectar cuando se presiona una tecla para mover el rectángulo
+        document.addEventListener("keydown", (event) => {
+            switch (event.key) {
+                case "ArrowLeft":
+                    // Mover el rectángulo a la izquierda
+                    if (rectX - 10 >= 0) {
+                        rectX -= 10;
+                    }
+                    break;
+                case "ArrowRight":
+                    // Mover el rectángulo a la derecha
+                    if (rectX + rectWidth + 10 <= canvasWidth) {
+                        rectX += 10;
+                    }
+                    break;
+                case "ArrowUp":
+                    // Mover el rectángulo hacia arriba
+                    if (rectY - 10 >= 0) {
+                        rectY -= 10;
+                    }
+                    break;
+                case "ArrowDown":
+                    // Mover el rectángulo hacia abajo
+                    if (rectY + rectHeight + 10 <= canvasHeight) {
+                        rectY += 10;
+                    }
+                    break;
+            }
+
+            // Limpiar el canvas y dibujar el rectángulo en la nueva posición
+            ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+            ctx.fillRect(rectX, rectY, rectWidth, rectHeight);
+        });
+    </script>
+
+</body>
